@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}{% load static %}
+{% block title %}movie{% endblock %}
+{% block content %}
+    <div class="gap-5 pt-3 mb-3 frc">
+        <div class="fc" style="height: 500px">
+            {% include 'kinopoisk/includes/movie_card.html' %}
+        </div>
+        <div class="fc">
+            <p class="fs-4 mb-2">Длительность: {{ movie.duration }} мин.</p>
+            <p class="mb-2" style="width: 550px; text-align: justify;">{{ movie.description }}</p>
+            <div class="fc" style="width: 550px">
+                <p class="fs-5 mb-1">Актеры:</p>
+                <div class="fr flex-wrap gap-2 mb-2">
+                    {% for person in movie.actors.all %}
+                        <div class="fc">
+                            <img class="flex-grow-1 object-fit-cover" src="{{ person.photo.url }}" width="100px" alt="">
+                            <p style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; width: 100px;">{{ person.name }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <p class="fs-5 mb-1">Режиссеры:</p>
+                <div class="fr flex-wrap gap-2 mb-3">
+                    {% for person in movie.directors.all %}
+                        <div class="fc">
+                            <img class="flex-grow-1 object-fit-cover" src="{{ person.photo.url }}" width="100px" alt="">
+                            <p style="white-space: nowrap;overflow: hidden; text-overflow: ellipsis; width: 100px;">{{ person.name }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <p class="fs-4">Прокат:</p>
+            <div class="card position-relative frc" style="width: 165px; height: 50px;">
+                <p class="fs-5">{{ movie.budget }} млн.</p>
+                <p class="fs-6 text-secondary position-absolute" style="top: 20px;">Бюджет</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

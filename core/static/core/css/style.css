@@ -2,6 +2,7 @@
     color: #949494;
     font-weight: 500;
 }
+
 /*иконки темы*/
 .sun-img {
     transition: opacity 600ms ease, margin-left 600ms ease;
@@ -10,5 +11,3 @@
 .moon-img {
     transition: opacity 600ms ease, margin-left 600ms ease;
 }
-
-/*тема*/

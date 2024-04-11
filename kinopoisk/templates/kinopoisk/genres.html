@@ -1,4 +1,14 @@
 {% extends 'core/base.html' %}{% load static %}
 {% block title %}genres{% endblock %}
 {% block content %}
+    <h1 class="text-center mb-2 mt-2">Genres</h1>
+    <div class="gap-2 pb-4 d-flex flex-wrap" style="flex-direction: column; align-items: center">
+        {% for genre in genres %}
+            <a class="text-dark text-decoration-none" style="--bs-text-opacity: none"
+               href="{% url 'genre_detail' id=genre.id %}">
+                <h2 class="fs-4 mb-1 ">
+                    {{ genre.name }}</h2>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}

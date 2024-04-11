@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}{% load static %}
+{% block title %}actor{% endblock %}
+{% block content %}
+    <div class="d-flex mt-3 justify-content-center">
+        <div class="card" style="width: 18rem; border: white">
+            <img src="{{ person.photo.url }}" class="card-img-top pb-2" style="border-radius: 5px" alt="">
+            <p class="fs-5">{{ person.name }}</p>
+            <p>{{ person.birth_date }}</p>
+        </div>
+    </div>
+{% endblock %}

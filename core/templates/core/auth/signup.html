@@ -2,7 +2,7 @@
 {% block title %}Signup{% endblock %}
 {% block content %}
         <div class="fcc">
-            <h1 class="text-center mb-2 mt-2">Sign Up</h1>
+            <h2 class="text-center mb-2 mt-2">Sign Up</h2>
             {% if error %}
                 <span class="text-danger mx-auto fw-bold">{{ error }}</span>
             {% endif %}
@@ -12,7 +12,10 @@
                 <input class="input form-control" name="email" type="text" placeholder="email">
                 <input class="input form-control" name="password" type="text" placeholder="password">
                 <input class="input form-control" name="repeat_password" type="text" placeholder="repeat password">
-                <button class="btn btn-secondary" type="submit">Next</button>
+                <button class="btn btn-close-white text-white" 
+                    style="background: linear-gradient(120deg, #df4b0b 50%, #bbf119); border: #df4b0b;
+                    type="submit">Next
+                </button>
             </form>
         </div>
 {% endblock %}

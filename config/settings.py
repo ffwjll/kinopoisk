@@ -5,27 +5,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8hwu9+!k)_8i6=%1djj+y=80u--g=cw=-koy2!do#9os0yg-bc'
 DEBUG = True
 ALLOWED_HOSTS = []
-# Переместить и подключить приложение Core
-# Сделать, чтобы работали Media файлы(в шпаргалке есть)
-# Проверить что работает авторизация и регистрация.
-# Сделать приложение kinopoisk
-
-# Сделать пустые странички используя base.html
-# статические маршруты:
-# movies/    movie_list
-# actors/    actor_list
-# directors/    director_list
-# genres/    genre_list
-
-# динамические маршруты:
-# movie/1/    movie_detail
-# actor/8/    actor_detail
-# director/7/    director_detail
-# genre/1/    genre_detail
-
-
-
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -70,7 +49,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -80,7 +58,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -99,7 +76,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

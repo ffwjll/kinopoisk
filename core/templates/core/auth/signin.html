@@ -2,7 +2,7 @@
 {% block title %}Signin{% endblock %}
 {% block content %}
     <div class="fcc">
-        <h1 class="text-center mb-2 mt-2">Sign In</h1>
+        <h2 class="text-center mb-2 mt-2">Sign In</h2>
         {% if error %}
             <span class="text-danger mx-auto fw-bold">{{ error }}</span>
         {% endif %}
@@ -10,7 +10,10 @@
             {% csrf_token %}
             <input class="input form-control" name="username" type="text" placeholder="username">
             <input class="input form-control" name="password" type="text" placeholder="password">
-            <button class="btn btn-secondary" type="submit">Next</button>
+            <button class="btn btn-close-white text-white" 
+                    style="background: linear-gradient(120deg, #df4b0b 50%, #bbf119);border: #df4b0b" 
+                    type="submit">Next
+            </button>
         </form>
     </div>
 {% endblock %}

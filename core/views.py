@@ -49,4 +49,4 @@ def profile(request):
 
 def signout(request):
     logout(request)
-    return redirect('catalog')
+    return redirect('movie_list')

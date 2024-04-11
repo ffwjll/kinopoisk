@@ -1,4 +1,13 @@
 {% extends 'core/base.html' %}{% load static %}
 {% block title %}movies{% endblock %}
 {% block content %}
+    <h1 class="text-center mb-2 mt-2">Movies</h1>
+    <div class="flex-wrap gap-2 pb-3 d-flex justify-content-center">
+        {% for movie in movies %}
+            <a class="card border-0 mw-250px text-decoration-none"
+               href="{% url 'movie_detail' id=movie.id %}">
+                {% include 'kinopoisk/includes/movie_card.html' with movies=movies %}
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}

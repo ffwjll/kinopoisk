@@ -1,0 +1,21 @@
+{% load static %}
+    <img src="{{ movie.poster.url }}"
+         class="card-img-top pb-2 rounded-1" alt="">
+    <h2 class="fs-5">{{ movie.title }}</h2>
+    <div class="frc m-0 mt-3 mx-3" style="background: linear-gradient(#efce76 50%, #b29854);
+                width: 60px; height: 30px; position: absolute; border-radius: 3px">
+        <img class="m-0 position-absolute"
+             src="{% static 'core/img/sheet.png' %}" width="22"
+             style=" transform: rotate(40deg) scaleX(-1); left: -1px; top: 3px;" alt="">
+        <p class="fcc text-dark fw-bold">{{ movie.rating }}</p>
+        <img class="m-0 position-absolute"
+             src="{% static 'core/img/sheet.png' %}" width="22"
+             style=" transform: rotate(-40deg) ; right: -1px; top: 3px;" alt="">
+    </div>
+    <p>
+        {% for genre in movie.genres.all %}
+            {% if forloop.first %}
+                <span>{{ genre.name|title }}</span>{% else %}<span>{{ genre.name }}</span>{% endif %}{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    </p>
+    <span class="text-secondary mt-auto">{{ movie.release_date }}</span>
